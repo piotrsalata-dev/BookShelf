@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
+        android:id="@+id/addnewbookconstanttitle"
+        android:text="@string/add_new_book"
+        android:textColor="#000000"
+        android:textSize="35sp"
+        android:textAlignment="center"
+        android:background="@color/colorAccent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginHorizontal="20dp"
+        android:paddingHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint=" add a title"
+        android:id="@+id/add_title"
+        app:layout_constraintTop_toBottomOf="@id/addnewbookconstanttitle"
+        app:layout_constraintBottom_toTopOf="@id/add_author"/>
+    <EditText
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint=" add an author"
+        android:id="@+id/add_author"
+        app:layout_constraintTop_toBottomOf="@id/add_title"
+        app:layout_constraintBottom_toTopOf="@id/add_comment"/>
+
+    <EditText
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:hint=" add a comment"
+        android:id="@+id/add_comment"
+        app:layout_constraintTop_toBottomOf="@id/add_author"
+        app:layout_constraintBottom_toTopOf="@id/add_button"
+        android:inputType="textMultiLine"
+        android:lines="20"
+        android:scrollHorizontally="false"
+        android:scrollbars="vertical"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="ADD"
+        android:onClick="addBook"
+        android:id="@+id/add_button"
+        app:layout_constraintTop_toBottomOf="@id/add_comment"
+        app:layout_constraintBottom_toTopOf="@id/book_list"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Books"
+        android:id="@+id/book_list"
+        app:layout_constraintTop_toBottomOf="@id/add_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
