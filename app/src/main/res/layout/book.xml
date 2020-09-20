@@ -1,27 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="2dp">
+    android:maxHeight="100dp"
+    android:padding="2dp"
+    android:background="#FF9E60"
+    android:layout_margin="10dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp">
+    <ImageView
+        android:id="@+id/book_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="15dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/book" />
 
-        <TextView
-            android:id="@+id/book"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="HERE SHOULD BE TEXT"
-            android:padding="5dp"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="30sp" />
-    </LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Space android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:padding="3dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="25sp"
+        android:textColor="#000000"
+        android:padding="5dp"
+        android:id="@+id/book_title"
+        android:hint="TYTUŁ"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/book_author" />
 
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:padding="5dp"
+        android:id="@+id/book_author"
+        android:hint="Author"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/book_title"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/delete_button"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="15dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bin"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

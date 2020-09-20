@@ -2,11 +2,13 @@ package com.example.testing;
 
 import com.google.firebase.firestore.Exclude;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
+
     private String title;
     private String author;
-    private String comment;
-    private String documentID;
+    @Exclude private String documentID;
 
     public Book() {
         //public no-arg constructor needed
@@ -25,19 +27,17 @@ public class Book {
         this.title = title;
     }
 
-    public Book(String title, String author, String comment) {
+    public Book(String title, String author) {
         this.title = title;
         this.author = author;
-        this.comment = comment;
+
     }
 
-    public String getTitle() {
+    public  String getTitle() {
         return title;
     }
-    public String getAuthor() {
+    public  String getAuthor() {
         return author;
     }
-    public String getComment() {
-        return comment;
-    }
+
 }

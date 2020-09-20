@@ -13,11 +13,11 @@
         android:layout_height="wrap_content"
         android:paddingVertical="20dp"
         android:id="@+id/addnewbookconstanttitle"
-        android:text="@string/add_new_book"
+        android:text="ADD NEW BOOK"
         android:textColor="#000000"
         android:textSize="35sp"
         android:textAlignment="center"
-        android:background="@color/colorAccent"
+        android:background="#F4663E"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
@@ -31,6 +31,7 @@
         android:id="@+id/add_title"
         app:layout_constraintTop_toBottomOf="@id/addnewbookconstanttitle"
         app:layout_constraintBottom_toTopOf="@id/add_author"/>
+
     <EditText
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -40,23 +41,7 @@
         android:hint=" add an author"
         android:id="@+id/add_author"
         app:layout_constraintTop_toBottomOf="@id/add_title"
-        app:layout_constraintBottom_toTopOf="@id/add_comment"/>
-
-    <EditText
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginHorizontal="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:hint=" add a comment"
-        android:id="@+id/add_comment"
-        app:layout_constraintTop_toBottomOf="@id/add_author"
-        app:layout_constraintBottom_toTopOf="@id/add_button"
-        android:inputType="textMultiLine"
-        android:lines="20"
-        android:scrollHorizontally="false"
-        android:scrollbars="vertical"
-        />
+        app:layout_constraintBottom_toTopOf="@id/add_button"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -64,14 +49,15 @@
         android:text="ADD"
         android:onClick="addBook"
         android:id="@+id/add_button"
-        app:layout_constraintTop_toBottomOf="@id/add_comment"
+        app:layout_constraintTop_toBottomOf="@id/add_author"
         app:layout_constraintBottom_toTopOf="@id/book_list"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Books"
+        android:text="Bookshelf"
         android:id="@+id/book_list"
         app:layout_constraintTop_toBottomOf="@id/add_button"
         app:layout_constraintBottom_toBottomOf="parent"
